@@ -1,0 +1,13 @@
+/* Global Styles */
+body {
+  background-color: #e9ecef;
+}
+
+#userImg {
+  width: 45px;
+}
+
+#postTime {
+  font-size: 14px;
+}
+/* / Global Styles /*/
