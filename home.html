@@ -13,12 +13,90 @@
     <link rel="stylesheet" href="src/css/styles.css" />
     <!-- IMPORT BOOTSTRAP JS -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- LOGOUT -->
+    <script type="module" src="src/js/logout.js"></script>
+    <!-- Update NAVBAR UI -->
+    <script type="module" src="src/js/updateNavUI.js"></script>
+    <!-- CLOSE MODAL -->
+    <script type="module" src="src/js/closeModal.js"></script>
+    <!-- GET ALL POSTS -->
+    <script type="module" src="src/js/login.js"></script>
     <!-- GET ALL POSTS -->
     <script type="module" src="src/js/getAllPosts.js"></script>
     <!-- MAIN JS SCRIPT -->
     <script type="module" src="src/js/main.js"></script>
   </head>
   <body>
+    <!-- Alerts -->
+    <div class="container">
+      <div
+        class="alert alert-success login-success-alert col-9 m-auto position-absolute z-3 end-0 w-25 visually-hidden"
+        role="alert"
+      >
+        A simple success alert—check it out!
+      </div>
+    </div>
+    <!-- / Alerts / -->
+
+    <!-- MODALs -->
+    <!-- LOGIN -->
+    <div
+      class="modal fade"
+      id="login"
+      tabindex="-1"
+      aria-labelledby="loginLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="loginLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control username"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                    value="sayed"
+                  />
+                  <label for="floatingInput">Username</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control password"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    value="123456"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="loginBtn">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / LOGIN / -->
+    <!-- / MODALs / -->
+
     <!-- Navbar -->
     <div class="container">
       <div class="d-flex justify-content-center mt-2">
@@ -55,9 +133,22 @@
               </ul>
               <!-- / LINKS / -->
               <!-- SIGN IN & UP -->
-              <div id="sign">
-                <button type="button" class="btn btn-primary">Login</button>
-                <button type="button" class="btn btn-primary">Register</button>
+              <div class="login__logout">
+                <button
+                  type="button"
+                  class="btn btn-primary loginBtn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#login"
+                  data-bs-whatever="@mdo"
+                >
+                  Login
+                </button>
+                <button type="button" class="btn btn-primary registerBtn">
+                  Register
+                </button>
+                <button type="button" class="btn btn-danger logoutBtn d-none">
+                  Logout
+                </button>
               </div>
               <!-- / SIGN IN & UP / -->
             </div>
