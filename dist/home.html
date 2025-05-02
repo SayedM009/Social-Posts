@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Posts</title>
+    <!-- IMPORT BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/home.ab0485ab.css">
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="/home.77a9bc14.css">
+    <!-- IMPORT BOOTSTRAP JS -->
+    <script type="module" src="/home.75e5d5d4.js"></script>
+    <!-- REGISTER -->
+    <script defer="" type="module" src="/home.5d4866ef.js"></script>
+    <!-- LOGOUT -->
+    <script defer="" type="module" src="/home.ac82e33a.js"></script>
+    <!-- Update NAVBAR UI -->
+    <script defer="" type="module" src="/home.3cd389df.js"></script>
+    <!-- CLOSE MODAL -->
+    <script defer="" type="module" src="/home.ee9cafb6.js"></script>
+    <!-- GET ALL POSTS -->
+    <script defer="" type="module" src="/home.3b0dc6a1.js"></script>
+    <!-- GET ALL POSTS -->
+    <script defer="" type="module" src="/home.4f339c7b.js"></script>
+    <!-- MAIN JS SCRIPT -->
+    <script defer="" type="module" src="/home.b828852a.js"></script>
+  </head>
+  <body>
+    <!-- Alerts -->
+    <div class="container">
+      <div class="alert alert-success login-success-alert col-9 m-auto position-absolute z-3 end-0 w-25 visually-hidden" role="alert" style="top: 90%">
+        A simple success alert—check it out!
+      </div>
+    </div>
+    <!-- / Alerts / -->
+
+    <!-- MODALs -->
+    <!-- LOGIN -->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="loginLabel">Login</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control username" id="floatingInput" placeholder="name@example.com" value="sayed">
+                  <label for="floatingInput">Username</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <input type="password" class="form-control password" id="floatingPassword" placeholder="Password" value="123456">
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="loginBtn">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / LOGIN / -->
+    <!-- Register -->
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="loginLabel">Register</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control name__register" id="floatingInput" placeholder="name@example.com" value="sayed">
+                  <label for="floatingInput">Name</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control username__register" id="floatingInput" placeholder="name@example.com" value="sayed">
+                  <label for="floatingInput">Username</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <input type="password" class="form-control password__register" id="floatingPassword" placeholder="Password" value="123456">
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="registerBtn">
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Register / -->
+    <!-- / MODALs / -->
+
+    <!-- Navbar -->
+    <div class="container">
+      <div class="d-flex justify-content-center mt-2">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary col-9 shadow rounded-2 px-2">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Social Posts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"> </span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-between d-none d-lg-block" id="navbarNav">
+              <!-- LINKS -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+              </ul>
+              <!-- / LINKS / -->
+              <!-- SIGN IN & UP -->
+              <div class="login__logout">
+                <button type="button" class="btn btn-primary loginBtn" data-bs-toggle="modal" data-bs-target="#login" data-bs-whatever="@mdo">
+                  Login
+                </button>
+                <button type="button" class="btn btn-primary registerBtn" data-bs-toggle="modal" data-bs-target="#register" data-bs-whatever="@mdo">
+                  Register
+                </button>
+                <button type="button" class="btn btn-danger logoutBtn d-none">
+                  Logout
+                </button>
+              </div>
+              <!-- / SIGN IN & UP / -->
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- / Navbar / -->
+
+    <!-- POSTS -->
+    <div class="container">
+      <div class="d-flex flex-column align-content-center m-auto row justify-content-center mt-3" id="posts">
+        <!-- POST -->
+        <div class="card col-9 my-3 shadow rounded-2 px-0">
+          <div class="card-header d-flex gap-2">
+            <img class="rounded-circle" src="/user.e1db2ddc.png" alt="User image" id="userImg">
+            <div class="info align-content-center">
+              <h6 class="fw-b mb-0 mt-1" id="userName">@Elsayed</h6>
+              <span id="postTime">02 Minutes ago</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <img class="w-100" src="/post-02.c0d1cb04.png" alt="">
+            <h3 class="my-3">Instagram</h3>
+            <p class="card-text">
+              With supporting text below as a natural lead-in to additional
+              content.
+            </p>
+            <hr>
+            <div class="comments">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewbox="0 0 16 16">
+                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"></path>
+              </svg>
+              <span>(3)</span>
+              <span>Comments</span>
+            </div>
+          </div>
+        </div>
+        <!-- / POST / -->
+      </div>
+    </div>
+    <!-- / POSTS / -->
+  </body>
+</html>
