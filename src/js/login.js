@@ -24,6 +24,8 @@ loginBtn.addEventListener("click", async function () {
 
     const { token, user } = await response.json();
 
+    console.log(user);
+
     // 1. Save toket & user in Local Storage
     localStorage.setItem("token", token);
     localStorage.setItem("user", JSON.stringify(user));
@@ -33,6 +35,9 @@ loginBtn.addEventListener("click", async function () {
     successAlert("Login successfully", 3);
     // 4. Update Navbar UI
     updateUI();
+    // 5. Adding Avatar
+    document.querySelector("#userAvatar").src =
+      user.profile_image || "../imgs/user.png";
   } catch (error) {
     dangerAlert(error.message, 2);
   }

@@ -1,11 +1,13 @@
 /* Global Styles */
 body {
   background-color: #e9ecef;
+  overflow-x: hidden;
 }
 
-#userImg {
-  width: 45px;
-  height: 45px;
+#userImg,
+#userAvatar {
+  width: 35px;
+  height: 35px;
 }
 
 #postTime {
