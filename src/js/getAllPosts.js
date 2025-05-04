@@ -1,3 +1,6 @@
+import { applyEventOnEditButtons } from "./editButtons.js";
+import { deletePost } from "./deletePost.js";
+
 const postsContainer = document.querySelector("#posts");
 
 export async function getAllPost() {
@@ -14,12 +17,21 @@ export async function getAllPost() {
 getAllPost();
 
 function injectFetchedPosts(posts) {
+  let id;
+  let name;
+  if (localStorage.getItem("token")) {
+    id = JSON.parse(localStorage.getItem("user")).id;
+    name = JSON.parse(localStorage.getItem("user")).name;
+  }
+
   postsContainer.innerHTML = "";
   posts.forEach((post) => {
     postsContainer.insertAdjacentHTML(
       "beforeend",
-      `<div class="card col-9 my-3 shadow rounded-2 px-0">
-            <div class="card-header d-flex gap-2">
+      `<div class="card col-9 my-3 shadow rounded-2 px-0" data-post="${encodeURIComponent(
+        JSON.stringify(post)
+      )}">
+            <div class="card-header d-flex gap-2 align-items-center">
               <img
                 class="rounded-circle"  
                 src="${checkImgExists(
@@ -34,6 +46,14 @@ function injectFetchedPosts(posts) {
                   post.author.username
                 }</h6>
                 <span id="postTime">${post.created_at}</span>
+              </div>
+              <div class="ms-auto ${
+                post.author.id == id && post.author.username == name
+                  ? "d-block"
+                  : "d-none"
+              }">
+                <button class="btn btn-warning edit__post--btn">Edit</button>
+                <button class="btn btn-danger delete__post--btn">Delete</button>
               </div>
             </div>
             <div class="card-body">
@@ -67,6 +87,8 @@ function injectFetchedPosts(posts) {
           </div>`
     );
   });
+  applyEventOnEditButtons();
+  deletePost();
 }
 
 function checkImgExists(url, localPath) {

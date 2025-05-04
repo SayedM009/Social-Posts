@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Posts</title>
+    <!-- IMPORT BOOTSTRAP CSS -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <!-- IMPORT BOOTSTRAP JS -->
+    <script
+      type="module"
+      src="./node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ></script>
+    <!-- MAIN JS SCRIPT -->
+    <script defer type="module" src="src/js/profile.js"></script>
+  </head>
+  <body>
+    <!-- Alerts -->
+    <!-- Success -->
+    <div class="container">
+      <div
+        class="alert alert-success login-success-alert position-absolute z-3 end-0 w-25 visually-hidden"
+        role="alert"
+        style="top: 90%"
+      >
+        A simple success alert—check it out!
+      </div>
+    </div>
+    <!-- / Success / -->
+    <!-- Danger -->
+    <div
+      class="alert alert-danger position-absolute z-3 end-0 w-50 visually-hidden"
+      role="alert"
+      style="top: 90%"
+    >
+      A simple danger alert—check it out!
+    </div>
+    <!-- / Danger / -->
+    <!-- / Alerts / -->
+
+    <!-- Navbar -->
+    <div class="container">
+      <div class="d-flex justify-content-center mt-2">
+        <nav
+          class="navbar navbar-expand-lg bg-body-tertiary col-9 shadow rounded-2 px-2"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Social Posts</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"> </span>
+            </button>
+            <div
+              class="collapse navbar-collapse d-flex justify-content-between d-none d-lg-block"
+              id="navbarNav"
+            >
+              <!-- LINKS -->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+              </ul>
+              <!-- / LINKS / -->
+              <!-- SIGN IN & UP -->
+              <div class="login__logout">
+                <button
+                  type="button"
+                  class="btn btn-primary loginBtn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#login"
+                  data-bs-whatever="@mdo"
+                >
+                  Login
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary registerBtn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#register"
+                  data-bs-whatever="@mdo"
+                >
+                  Register
+                </button>
+                <img
+                  class="rounded-circle shadow-lg d-none"
+                  src="src/imgs/user.png"
+                  alt="User image"
+                  id="userAvatar"
+                />
+                <button type="button" class="btn btn-danger logoutBtn d-none">
+                  Logout
+                </button>
+              </div>
+              <!-- / SIGN IN & UP / -->
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- / Navbar / -->
+    <!-- POSTS -->
+    <div class="container">
+      <div
+        class="d-flex flex-column align-content-center m-auto row justify-content-center mt-3"
+        id="profilePosts"
+      >
+        <!-- POST -->
+
+        <!-- / POST / -->
+      </div>
+    </div>
+    <!-- / POSTS / -->
+  </body>
+</html>

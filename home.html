@@ -236,7 +236,12 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="post__btn">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="post__btn"
+              data-edit="false"
+            >
               Post
             </button>
           </div>
@@ -244,6 +249,115 @@
       </div>
     </div>
     <!-- / CREATE POST / -->
+
+    <!-- EDIT POST -->
+    <div
+      class="modal fade"
+      id="editPost"
+      tabindex="-1"
+      aria-labelledby="editPostLable"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="editPostLable">
+              Create a new post
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control post__title--edit"
+                    id="floatingInputPosttitle"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInputPosttitle">Title</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control post__body--edit"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    style="resize: none"
+                    placeholder="Type here"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <div class="mb-3">
+                    <input
+                      class="form-control post__image--edit"
+                      type="file"
+                      id="formFile"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="post__btn--edit"
+              data-edit="false"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / EDIT POST / -->
+    <!-- DELETE POST -->
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="deleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Delete</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Are you sure to delete this post?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger modalDeleteBtn">
+              Yes, Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / DELETE POST / -->
     <!-- / MODALs / -->
 
     <!-- FIXED BUTTONS -->
@@ -339,45 +453,7 @@
         id="posts"
       >
         <!-- POST -->
-        <div class="card col-9 my-3 shadow rounded-2 px-0">
-          <div class="card-header d-flex gap-2 align-items-center">
-            <img
-              class="rounded-circle"
-              src="src/imgs/user.png"
-              alt="User image"
-              id="userImg"
-            />
-            <div class="info align-content-center">
-              <h6 class="fw-b mb-0 mt-1" id="userName">@Elsayed</h6>
-              <span id="postTime">02 Minutes ago</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <img class="w-100" src="src/imgs/post-02.png" alt="" />
-            <h3 class="my-3">Instagram</h3>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <hr />
-            <div class="comments">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-pen"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"
-                />
-              </svg>
-              <span>(3)</span>
-              <span>Comments</span>
-            </div>
-          </div>
-        </div>
+
         <!-- / POST / -->
       </div>
     </div>

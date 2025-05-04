@@ -9,7 +9,7 @@ const postImage = document.querySelector(".post__image");
 const postBtn = document.getElementById("post__btn");
 const createPostModal = document.querySelector("#createPost");
 
-postBtn.addEventListener("click", async function () {
+postBtn.addEventListener("click", async function (e) {
   try {
     if (!title.value && !postBody.value && !postImage.files[0]) return;
     const formData = new FormData();

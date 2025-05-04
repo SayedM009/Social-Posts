@@ -1,5 +1,6 @@
 import { closeModal } from "./closeModal.js";
 import { dangerAlert } from "./dangerAlert.js";
+import { getAllPost } from "./getAllPosts.js";
 import { successAlert } from "./successAlert.js";
 import { updateUI } from "./updateNavUI.js";
 
@@ -8,7 +9,7 @@ const password = document.querySelector(".password");
 const loginBtn = document.getElementById("loginBtn");
 const loginModal = document.querySelector("#login");
 
-loginBtn.addEventListener("click", async function () {
+loginBtn?.addEventListener("click", async function () {
   if (!username.value && !password.value) return;
   try {
     const response = await fetch("https://tarmeezacademy.com/api/v1/login", {
@@ -24,8 +25,6 @@ loginBtn.addEventListener("click", async function () {
 
     const { token, user } = await response.json();
 
-    console.log(user);
-
     // 1. Save toket & user in Local Storage
     localStorage.setItem("token", token);
     localStorage.setItem("user", JSON.stringify(user));
@@ -35,9 +34,12 @@ loginBtn.addEventListener("click", async function () {
     successAlert("Login successfully", 3);
     // 4. Update Navbar UI
     updateUI();
+    // 5. Fetch all post
+    getAllPost();
     // 5. Adding Avatar
-    document.querySelector("#userAvatar").src =
-      user.profile_image || "../imgs/user.png";
+    document.querySelector("#userAvatar").src = user.profile_image
+      ? user.profile_image
+      : "../imgs/user.png";
   } catch (error) {
     dangerAlert(error.message, 2);
   }
