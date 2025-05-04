@@ -2,6 +2,7 @@ import { closeModal } from "./closeModal.js";
 import { dangerAlert } from "./dangerAlert.js";
 import { successAlert } from "./successAlert.js";
 import { updateUI } from "./updateNavUI.js";
+import { getAllPost } from "./getAllPosts.js";
 
 const name = document.querySelector(".name__register");
 const username = document.querySelector(".username__register");
@@ -35,7 +36,9 @@ registerBtn.addEventListener("click", async function () {
     successAlert("New user has added", 3);
     // 4. Update Navbar UI
     updateUI();
-    // 5. Adding Avatar
+    // 5. Re-fetch all Posts
+    getAllPost();
+    // 6. Adding Avatar
     document.querySelector("#userAvatar").src = user.profile_image;
   } catch (error) {
     dangerAlert(error.message, 2);

@@ -1,3 +1,6 @@
+import { applyEventOnEditButtons } from "./editButtons.js";
+import { deletePost } from "./deletePost.js";
+
 const postsContainer = document.querySelector("#posts");
 let lastPost;
 let pageCount = 1;
@@ -17,12 +20,11 @@ export async function getAllPost(page = 1) {
 }
 
 function injectFetchedPosts(posts) {
+  postsContainer.innerHTML = "";
   posts.forEach((post) => {
     postsContainer.insertAdjacentHTML(
       "beforeend",
-      `<div class="card col-9 my-3 shadow rounded-2 px-0" data-id="${
-        post.id
-      }" style="cursor:pointer">
+      `<div class="card col-9 my-3 shadow rounded-2 px-0">
             <div class="card-header d-flex gap-2">
               <img
                 class="rounded-circle"  
@@ -38,6 +40,14 @@ function injectFetchedPosts(posts) {
                   post.author.username
                 }</h6>
                 <span id="postTime">${post.created_at}</span>
+              </div>
+              <div class="ms-auto ${
+                post.author.id == id && post.author.username == name
+                  ? "d-block"
+                  : "d-none"
+              }">
+                <button class="btn btn-warning edit__post--btn">Edit</button>
+                <button class="btn btn-danger delete__post--btn">Delete</button>
               </div>
             </div>
             <div class="card-body">
@@ -71,6 +81,8 @@ function injectFetchedPosts(posts) {
           </div>`
     );
   });
+  applyEventOnEditButtons();
+  deletePost();
 }
 
 function checkImgExists(url, localPath) {

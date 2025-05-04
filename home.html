@@ -236,7 +236,12 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="post__btn">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="post__btn"
+              data-edit="false"
+            >
               Post
             </button>
           </div>
@@ -244,6 +249,115 @@
       </div>
     </div>
     <!-- / CREATE POST / -->
+
+    <!-- EDIT POST -->
+    <div
+      class="modal fade"
+      id="editPost"
+      tabindex="-1"
+      aria-labelledby="editPostLable"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold" id="editPostLable">
+              Create a new post
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control post__title--edit"
+                    id="floatingInputPosttitle"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingInputPosttitle">Title</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control post__body--edit"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    style="resize: none"
+                    placeholder="Type here"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-floating">
+                  <div class="mb-3">
+                    <input
+                      class="form-control post__image--edit"
+                      type="file"
+                      id="formFile"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="post__btn--edit"
+              data-edit="false"
+            >
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / EDIT POST / -->
+    <!-- DELETE POST -->
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="deleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Delete</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Are you sure to delete this post?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger modalDeleteBtn">
+              Yes, Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / DELETE POST / -->
     <!-- / MODALs / -->
 
     <!-- FIXED BUTTONS -->
