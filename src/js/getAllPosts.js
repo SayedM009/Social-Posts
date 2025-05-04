@@ -1,24 +1,28 @@
 const postsContainer = document.querySelector("#posts");
-
-export async function getAllPost() {
+let lastPost;
+let pageCount = 1;
+export async function getAllPost(page = 1) {
   try {
-    const response = await fetch(`https://tarmeezacademy.com/api/v1/posts`);
+    const response = await fetch(
+      `https://tarmeezacademy.com/api/v1/posts?limit=20&page=${page}`
+    );
     const data = await response.json();
     const { data: posts } = data;
     injectFetchedPosts(posts);
   } catch {
   } finally {
+    lastPost = [...postsContainer.children].at(-1);
+    watch();
   }
 }
 
-getAllPost();
-
 function injectFetchedPosts(posts) {
-  postsContainer.innerHTML = "";
   posts.forEach((post) => {
     postsContainer.insertAdjacentHTML(
       "beforeend",
-      `<div class="card col-9 my-3 shadow rounded-2 px-0">
+      `<div class="card col-9 my-3 shadow rounded-2 px-0" data-id="${
+        post.id
+      }" style="cursor:pointer">
             <div class="card-header d-flex gap-2">
               <img
                 class="rounded-circle"  
@@ -72,3 +76,29 @@ function injectFetchedPosts(posts) {
 function checkImgExists(url, localPath) {
   return Object.keys(url).length > 1 ? url : localPath;
 }
+
+getAllPost();
+
+function watch() {
+  function callBack(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        pageCount += 1;
+        getAllPost(pageCount);
+      }
+    });
+  }
+
+  const options = {
+    root: null,
+    threshold: 1.0,
+  };
+
+  const observer = new IntersectionObserver(callBack, options);
+  observer.observe(lastPost);
+}
+
+postsContainer.addEventListener("click", function (e) {
+  const id = e.target.closest(".card").dataset.id;
+  window.location = `postDetails.html?postId=${id}`;
+});

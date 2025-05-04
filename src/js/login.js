@@ -24,7 +24,7 @@ loginBtn.addEventListener("click", async function () {
 
     const { token, user } = await response.json();
 
-    console.log(user);
+    console.log(token);
 
     // 1. Save toket & user in Local Storage
     localStorage.setItem("token", token);

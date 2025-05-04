@@ -11,7 +11,7 @@ function updateUI() {
     loginBtn.classList.add("d-none");
     registerBtn.classList.add("d-none");
     logoutBtn.classList.remove("d-none");
-    createPostBtn.classList.remove("d-none");
+    if (createPostBtn) createPostBtn.classList.remove("d-none");
     userAvatar.classList.remove("d-none");
   }
 
@@ -19,7 +19,7 @@ function updateUI() {
     loginBtn.classList.remove("d-none");
     registerBtn.classList.remove("d-none");
     logoutBtn.classList.add("d-none");
-    createPostBtn.classList.add("d-none");
+    if (createPostBtn) createPostBtn.classList.add("d-none");
     userAvatar.classList.add("d-none");
   }
 }

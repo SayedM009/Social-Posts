@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Post Details</title>
+      <!-- IMPORT BOOTSTRAP CSS -->
+      <link
+        rel="stylesheet"
+        href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+      />
+      <!-- MAIN CSS FILE -->
+      <link rel="stylesheet" href="src/css/styles.css" />
+      <!-- IMPORT BOOTSTRAP JS -->
+      <script
+        type="module"
+        src="./node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ></script>
+      <!-- MAIN JS SCRIPT -->
+      <script defer type="module" src="src/js/postDetails.js"></script>
+    </head>
+    <body>
+      <!-- Alerts -->
+      <!-- Success -->
+      <div class="container">
+        <div
+          class="alert alert-success login-success-alert position-absolute z-3 end-0 w-25 visually-hidden"
+          role="alert"
+          style="top: 90%"
+        >
+          A simple success alert—check it out!
+        </div>
+      </div>
+      <!-- / Success / -->
+      <!-- Danger -->
+      <div
+        class="alert alert-danger position-absolute z-3 end-0 w-50 visually-hidden"
+        role="alert"
+        style="top: 90%"
+      >
+        A simple danger alert—check it out!
+      </div>
+      <!-- / Danger / -->
+      <!-- / Alerts / -->
+
+      <!-- MODALs -->
+      <!-- LOGIN -->
+      <div
+        class="modal fade"
+        id="login"
+        tabindex="-1"
+        aria-labelledby="loginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 fw-bold" id="loginLabel">Login</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control username"
+                      id="floatingInputUsernameLogin"
+                      placeholder="name@example.com"
+                      value="sayed"
+                    />
+                    <label for="floatingInputUsernameLogin">Username</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-floating">
+                    <input
+                      type="password"
+                      class="form-control password"
+                      id="floatingPassword"
+                      placeholder="Password"
+                      value="123456"
+                    />
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="loginBtn">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / LOGIN / -->
+      <!-- Register -->
+      <div
+        class="modal fade"
+        id="register"
+        tabindex="-1"
+        aria-labelledby="loginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 fw-bold" id="loginLabel">Register</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control name__register"
+                      id="floatingInputName"
+                      placeholder="name@example.com"
+                      value="sayed"
+                    />
+                    <label for="floatingInputName">Name</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control username__register"
+                      id="floatingInputUsername"
+                      placeholder="name@example.com"
+                      value="sayed"
+                    />
+                    <label for="floatingInputUsername">Username</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-floating mb-3">
+                    <input
+                      class="form-control userImage"
+                      type="file"
+                      id="formFile"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-floating">
+                    <input
+                      type="password"
+                      class="form-control password__register"
+                      id="floatingPasswordRegister"
+                      placeholder="Password"
+                      value="123456"
+                    />
+                    <label for="floatingPasswordRegister">Password</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="registerBtn">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / Register / -->
+      <!-- CREATE POST -->
+      <div
+        class="modal fade"
+        id="createPost"
+        tabindex="-1"
+        aria-labelledby="createPostLable"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 fw-bold" id="createPostLable">
+                Create a new post
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control post__title"
+                      id="floatingInputPosttitle"
+                      placeholder="name@example.com"
+                    />
+                    <label for="floatingInputPosttitle">Title</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control post__body"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      style="resize: none"
+                      placeholder="Type here"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-floating">
+                    <div class="mb-3">
+                      <input
+                        class="form-control post__image"
+                        type="file"
+                        id="formFile"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="post__btn">
+                Post
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / CREATE POST / -->
+      <!-- / MODALs / -->
+
+      <!-- Navbar -->
+      <div class="container">
+        <div class="d-flex justify-content-center mt-2">
+          <nav
+            class="navbar navbar-expand-lg bg-body-tertiary col-9 shadow rounded-2 px-2"
+          >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="home.html">Social Posts</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"> </span>
+              </button>
+              <div
+                class="collapse navbar-collapse d-flex justify-content-between d-none d-lg-block"
+                id="navbarNav"
+              >
+                <!-- LINKS -->
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                  </li>
+                </ul>
+                <!-- / LINKS / -->
+                <!-- SIGN IN & UP -->
+                <div class="login__logout">
+                  <button
+                    type="button"
+                    class="btn btn-primary loginBtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#login"
+                    data-bs-whatever="@mdo"
+                  >
+                    Login
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary registerBtn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#register"
+                    data-bs-whatever="@mdo"
+                  >
+                    Register
+                  </button>
+                  <img
+                    class="rounded-circle shadow-lg d-none"
+                    src="src/imgs/user.png"
+                    alt="User image"
+                    id="userAvatar"
+                  />
+                  <button type="button" class="btn btn-danger logoutBtn d-none">
+                    Logout
+                  </button>
+                </div>
+                <!-- / SIGN IN & UP / -->
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- / Navbar / -->
+      <!-- POSTS -->
+      <div class="container">
+        <div
+          class="col-9 d-flex flex-column align-content-center m-auto row justify-content-center mt-3"
+          id="postDetailsContainer"
+        >
+          <h3 class="specific__post--title">Post Title</h3>
+
+          <!-- POST -->
+
+          <!-- / POST / -->
+        </div>
+      </div>
+      <!-- / POSTS / -->
+    </body>
+  </html>
+</html>
